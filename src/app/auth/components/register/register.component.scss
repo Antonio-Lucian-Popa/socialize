@@ -1,0 +1,40 @@
+.container-register {
+  background: linear-gradient(to bottom, #414171, #0F0F11);
+
+  .left {
+    .container-images {
+      max-width: 30rem;
+      margin-bottom: 4rem;
+
+      img {
+        width: 100%;
+      }
+    }
+
+    .container-description {
+      h3 {
+        font-size: 2.5rem;
+      }
+
+      h3,
+      p {
+        color: #ffff;
+      }
+    }
+  }
+
+  .container-card {
+    width: min(30rem);
+  }
+
+
+  .user-message {
+    p {
+      font-size: 0.8rem;
+    }
+  }
+}
+
+input.ng-invalid.ng-touched {
+  border: red 1px solid;
+}

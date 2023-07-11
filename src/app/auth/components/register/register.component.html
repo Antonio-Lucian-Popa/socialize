@@ -1,0 +1,111 @@
+<!-- <main class="form-signin">
+  <form [formGroup]="form" (submit)="submit()">
+    <h1 class="h3 mb-3 fw-normal">Please register</h1>
+
+    <div class="form-floating">
+      <input id="firstName" type="text" formControlName="firstName" class="form-control" placeholder="First Name">
+      <label for="firstName">First Name</label>
+    </div>
+
+    <div class="form-floating">
+      <input id="lastName" type="text" formControlName="lastName" class="form-control" placeholder="Last Name">
+      <label for="lastName">Last Name</label>
+    </div>
+
+    <div class="form-floating">
+      <input id="email" type="text" formControlName="email" class="form-control" placeholder="Email">
+      <label for="email">Email</label>
+    </div>
+
+    <div class="form-floating">
+      <input id="password" type="password" formControlName="password" class="form-control" placeholder="Password">
+      <label for="password">Password</label>
+    </div>
+
+    <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+
+  </form>
+</main> -->
+
+<div class="container-register d-flex justify-content-around h-100">
+  <div class="left d-flex flex-column align-items-center justify-content-center">
+    <div class="container-images">
+      <img src="./assets/img/auth-image.png" alt="auth image">
+    </div>
+    <div class="container-description">
+      <h3>Find new friends<br /> with Socialize!</h3>
+      <p>We connect people around the
+        world</p>
+    </div>
+  </div>
+
+  <div class="container-card h-100 d-flex align-items-center">
+    <mat-card>
+      <mat-card-content>
+        <form class="form-container" [formGroup]="form" (ngSubmit)="submit()">
+          <div class="d-flex flex-column  mb-3">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="form-floating">
+                <input id="firstName" type="text" formControlName="firstName" class="form-control"
+                  placeholder="First Name">
+                <label for="firstName">First Name</label>
+              </div>
+              <div class="form-floating">
+                <input id="lastName" type="text" formControlName="lastName" class="form-control" placeholder="Last Name"
+                  required>
+                <label for="lastName">Last Name</label>
+              </div>
+            </div>
+            <mat-error *ngIf="checkRequiredField('firstName') || checkRequiredField('lastName')">
+              Please compile the required input
+            </mat-error>
+          </div>
+          <div class="form-floating" [ngClass]="!checkRequiredField('email') ? 'mb-3' : ''">
+            <input id="email" type="text" formControlName="email" class="form-control" placeholder="Email">
+            <label for="email">Email</label>
+          </div>
+          <mat-error class="mb-3" *ngIf="checkRequiredField('email')">
+            Please compile correct the required input
+          </mat-error>
+
+          <div class="form-floating" [ngClass]="!checkRequiredField('password') ? 'mb-3' : ''">
+            <input id="password" type="password" formControlName="password" class="form-control" placeholder="Password">
+            <label for="password">Password</label>
+          </div>
+          <mat-error class="mb-3" *ngIf="checkRequiredField('password')">
+            Please compile the required input
+          </mat-error>
+
+          <div class="d-flex flex-column  mb-3">
+            <div class="d-flex justify-content-between">
+              <div class="form-floating">
+                <input id="date" type="date" formControlName="birthday" class="form-control">
+                <label for="date">Birthday</label>
+              </div>
+              <mat-form-field>
+                <mat-label>Gender</mat-label>
+                <mat-select formControlName="gender">
+                  <mat-option value="male">Male</mat-option>
+                  <mat-option value="female">Female</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <mat-error *ngIf="checkRequiredField('birthday') || checkRequiredField('gender')">
+              Please compile the required input
+            </mat-error>
+          </div>
+          <div class="user-message mb-3">
+            <p>By clicking Sign Up, you agree to our <a href="#">Terms</a>. Learn how we collect, use and share your
+              data in our
+              Privacy
+              Policy and how we use cookies and similar technology in our Cookies Policy. You may receive SMS
+              Notifications from us and can opt out any time.</p>
+          </div>
+          <div class="container-btn d-flex align-items-center justify-content-end">
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+          </div>
+        </form>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

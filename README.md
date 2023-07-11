@@ -1,6 +1,4 @@
-# Jwt Project Template
-
-🚀 This is a starter project template for FE apps that use JWT Authentication
+# Socialize
 
 ## Features
 * User registration and login with JWT authentication
