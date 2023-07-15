@@ -1,18 +1,47 @@
-<main class="form-signin">
-  <form [formGroup]="form" (submit)="submit()">
-    <h1 class="h3 mb-3 fw-normal">Please sign in</h1>
-
-    <div class="form-floating">
-      <input id="email" type="text" formControlName="email" class="form-control" placeholder="Email">
-      <label for="email">Email</label>
+<div class="container-login d-flex justify-content-around h-100">
+  <div class="left d-flex flex-column align-items-center justify-content-center">
+    <div class="container-images">
+      <img src="./assets/img/auth-image.png" alt="auth image">
     </div>
-
-    <div class="form-floating">
-      <input id="password" type="password" formControlName="password" class="form-control" placeholder="Password">
-      <label for="password">Password</label>
+    <div class="container-description">
+      <h3>Find new friends<br /> with Socialize!</h3>
+      <p>We connect people around the
+        world</p>
     </div>
+  </div>
 
-    <button class="w-100 btn btn-lg btn-primary" type="submit">Submit</button>
+  <div class="container-card h-100 d-flex align-items-center">
+    <mat-card>
+      <mat-card-content>
+        <form class="form-container" [formGroup]="form" (ngSubmit)="submit()">
+          <div class="form-floating" [ngClass]="!checkRequiredField('email') ? 'mb-3' : ''">
+            <input id="email" type="text" formControlName="email" class="form-control" placeholder="Email">
+            <label for="email">Email</label>
+          </div>
+          <mat-error class="mb-3" *ngIf="checkRequiredField('email')">
+            Please compile correct the required input
+          </mat-error>
 
-  </form>
-</main>
+          <div class="form-floating" [ngClass]="!checkRequiredField('password') ? 'mb-3' : ''">
+            <input id="password" type="password" formControlName="password" class="form-control" placeholder="Password">
+            <label for="password">Password</label>
+          </div>
+          <mat-error class="mb-3" *ngIf="checkRequiredField('password')">
+            Please compile the required input
+          </mat-error>
+
+          <div class="container-btn d-flex align-items-center justify-content-end">
+            <button class="w-100 btn btn-lg btn-primary" type="submit">Log In</button>
+          </div>
+
+          <a href="#" class="forgot-pass-msg mt-2">Forgot password?</a>
+        </form>
+
+        <mat-divider class="mt-3 mb-3"></mat-divider>
+        <div class="container-btn d-flex align-items-center justify-content-center">
+          <button class="btn btn-lg btn-new-account" type="button" routerLink="/register">Create new account</button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

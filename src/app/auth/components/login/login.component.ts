@@ -35,4 +35,8 @@ export class LoginComponent implements OnInit {
     }
   }
 
+  checkRequiredField(fieldName: string): boolean {
+    return this.form.get(fieldName)!.invalid && (this.form.get(fieldName)!.dirty || this.form.get(fieldName)!.touched) && this.form.get(fieldName)!.hasError('required')
+  }
+
 }
