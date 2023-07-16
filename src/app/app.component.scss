@@ -9,9 +9,28 @@
   width: 100%;
 }
 
+.top-nav-mobile {
+  border-bottom: 2px solid #e4e3e3;
+  .user-profile-info {
+    margin-right: 1rem;
+    .profile-image {
+      width: 2rem;
+
+      img {
+        width: 100%;
+        border-radius: 50%;
+      }
+    }
+  }
+}
+
 
 @media (min-width: 1264px) and (max-width: 1919px) {
   .mobile-nav {
+    display: none;
+  }
+
+  .top-nav-mobile {
     display: none;
   }
   .container-routing {
@@ -21,6 +40,10 @@
 
 @media (min-width: 768px) and (max-width: 1263px) {
   .mobile-nav {
+    display: none;
+  }
+
+  .top-nav-mobile {
     display: none;
   }
   .container-routing {
@@ -35,6 +58,10 @@
   }
 
   .mobile-nav {
+    display: block;
+  }
+
+  .top-nav-mobile {
     display: block;
   }
 

@@ -1,9 +1,24 @@
 
-<div class="container-nav">
-  <ul class="links d-flex flex-column align-items-start">
+<div class="container-nav d-flex align-items-center w-100 h-100">
+  <ul class="links d-flex align-items-center justify-content-between w-100">
     <li class="d-flex align-items-center w-100">
       <mat-icon class="material-symbols-outlined" (click)="navigateTo('/home')" [routerLink]="['/home']" [routerLinkActive]="'active'">
         home
+      </mat-icon>
+    </li>
+    <li class="d-flex align-items-center w-100">
+      <mat-icon class="material-symbols-outlined" (click)="navigateTo('/home')" [routerLink]="['/home']" [routerLinkActive]="'active'">
+        explore
+      </mat-icon>
+    </li>
+    <li class="d-flex align-items-center w-100">
+      <mat-icon class="material-symbols-outlined" (click)="navigateTo('/home')" [routerLink]="['/home']" [routerLinkActive]="'active'">
+        notifications
+      </mat-icon>
+    </li>
+    <li class="d-flex align-items-center w-100">
+      <mat-icon class="material-symbols-outlined" (click)="navigateTo('/home')" [routerLink]="['/home']" [routerLinkActive]="'active'">
+        chat
       </mat-icon>
     </li>
   </ul>
