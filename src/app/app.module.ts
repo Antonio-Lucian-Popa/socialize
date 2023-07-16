@@ -9,16 +9,23 @@ import { AuthInterceptor } from './auth/auth.interceptor';
 import { ReactiveFormsModule } from '@angular/forms';
 import { RegisterComponent } from './auth/components/register/register.component';
 import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
-import {MatCardModule} from '@angular/material/card';
-import {MatSelectModule} from '@angular/material/select';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatDividerModule} from '@angular/material/divider';
+import { SharedModule } from './shared/shared.module';
+import { SideNavComponent } from './core/components/side-nav/side-nav.component';
+import { NotificationListComponent } from './core/components/notification-list/notification-list.component';
+import { NotFoundComponent } from './core/components/not-found/not-found.component';
+import { GlobalHttpInterceptorService } from './core/global-http-interceptor.service';
+import { MobileNavigationComponent } from './core/components/mobile-navigation/mobile-navigation.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
-    RegisterComponent
+    RegisterComponent,
+    SideNavComponent,
+    NotificationListComponent,
+    NotFoundComponent,
+    MobileNavigationComponent
   ],
   imports: [
     BrowserModule,
@@ -26,15 +33,18 @@ import {MatDividerModule} from '@angular/material/divider';
     ReactiveFormsModule,
     HttpClientModule,
     NgbModule,
-    MatCardModule,
-    MatSelectModule,
     BrowserAnimationsModule,
-    MatDividerModule
+    SharedModule
   ],
   providers: [
     {
       provide: HTTP_INTERCEPTORS,
       useClass: AuthInterceptor,
+      multi: true
+    },
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: GlobalHttpInterceptorService,
       multi: true
     }
   ],

@@ -2,3 +2,43 @@
 //   min-height: 100vh;
 //   width: 100%;
 // }
+
+.mobile-nav {
+  position: fixed;
+  bottom: 0%;
+  width: 100%;
+}
+
+
+@media (min-width: 1264px) and (max-width: 1919px) {
+  .mobile-nav {
+    display: none;
+  }
+  .container-routing {
+    width: calc(100% - var(--nav-medium-width));
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1263px) {
+  .mobile-nav {
+    display: none;
+  }
+  .container-routing {
+    width: calc(100% - var(--nav-narrow-width));
+  }
+}
+
+@media (max-width: 800px) {
+
+  .container-routing {
+    width: 100%;
+  }
+
+  .mobile-nav {
+    display: block;
+  }
+
+  .side-nav {
+    display: none;
+  }
+}

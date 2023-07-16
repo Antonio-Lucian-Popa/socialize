@@ -37,3 +37,9 @@ $jwt-form-authentication-theme: mat.define-light-theme((
 
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+:root {
+  --nav-narrow-width: 72px;
+  --nav-medium-width: 244px;
+  --nav-wide-width: 335px;
+}
