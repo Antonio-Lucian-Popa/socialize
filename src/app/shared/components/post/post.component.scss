@@ -1,0 +1,115 @@
+.container-post {
+  width: 25rem;
+  background: #f1f1f1;
+  padding: 10px;
+  border-radius: 5px;
+
+  i {
+    cursor: pointer;
+  }
+
+  .menu-option-post {
+    width: 1rem !important;
+  }
+
+  .date-post-info {
+    margin: 0 !important;
+    font-size: 0.8rem;
+  }
+
+  .post-data {
+    p {
+      font-size: 0.9rem;
+    }
+
+    .container-images {
+     // width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+
+
+      img {
+        flex: 1 1 auto;
+        max-width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+    }
+  }
+
+  .user-actions {
+    border-top: 1px solid #dddddd;
+
+    p {
+      margin-bottom: 0 !important;
+      margin-left: 0.3rem;
+    }
+
+    i {
+      cursor: pointer;
+    }
+  }
+}
+
+.user-profile-info {
+
+  .profile-image {
+    width: 2rem;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .username {
+    margin-bottom: 0 !important;
+    margin-left: 1rem;
+    font-weight: 500;
+    color: #2f2f2f;
+    margin-right: 0.3rem;
+  }
+}
+
+.add-margin-right {
+  margin-right: 1rem;
+}
+
+// .swiper-container {
+//   width: 100%;
+//   height: 400px;  // Adjust as needed
+
+//   .swiper-slide {
+//     text-align: center;
+//     font-size: 18px;
+//     background: #fff;
+
+//     /* Center slide content vertically */
+//     display: -webkit-box;
+//     display: -ms-flexbox;
+//     display: -webkit-flex;
+//     display: flex;
+//     -webkit-box-pack: center;
+//     -ms-flex-pack: center;
+//     -webkit-justify-content: center;
+//     justify-content: center;
+//     -webkit-box-align: center;
+//     -ms-flex-align: center;
+//     -webkit-align-items: center;
+//     align-items: center;
+
+//     img {
+//       max-width: 100%;
+//       max-height: 100%;
+//       object-fit: cover;  // This will ensure your images maintain their aspect ratio
+//     }
+//   }
+// }
+
+
+
+@media (max-width: 768px) {
+  .swiper-button-next, .swiper-button-prev {
+    display: none;
+  }
+}

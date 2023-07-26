@@ -1,6 +1,7 @@
 .nav {
   width: var(--nav-medium-width);
   border-right: 2px solid #e3e3e3;
+  position: fixed;
 
   .logo-mobile {
     display: none;

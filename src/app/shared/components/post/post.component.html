@@ -1,0 +1,77 @@
+<!-- <div *ngFor="let post of posts; let i = index" class="container-post">
+  <div class="d-flex align-items-center justify-content-between">
+    <div class="user-profile-info d-flex align-items-center justify-content-start">
+      <div class="profile-image">
+        <img src="./assets/img/female.jpeg" alt="user profile image">
+      </div>
+      <div class="container-info d-flex align-items-center">
+        <p class="username">Melissa Adam</p>
+        <p class="date-post-info">- 1h</p>
+      </div>
+    </div>
+    <i [matMenuTriggerFor]="menu" class="fa-solid fa-ellipsis-vertical"></i>
+    <mat-menu #menu="matMenu" class="menu-option-post">
+      <button mat-menu-item>
+        <mat-icon>dialpad</mat-icon>
+        <span>Redial</span>
+      </button>
+      <button mat-menu-item disabled>
+        <mat-icon>voicemail</mat-icon>
+        <span>Check voice mail</span>
+      </button>
+      <button mat-menu-item>
+        <mat-icon>notifications_off</mat-icon>
+        <span>Disable alerts</span>
+      </button>
+    </mat-menu>
+  </div>
+  <div class="post-data mt-3 mb-3">
+    <p class="description mb-3">Watching pic in pic video while scrolling this platform is great</p>
+
+    <div class="swiper-container">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide" *ngFor="let image of post.images">
+          <img [src]="image" alt="">
+        </div>
+      </div>
+       Add Pagination
+      <div class="swiper-pagination"></div>
+       Add Navigation
+      <div *ngIf="showNavigation[i]" class="swiper-button-next"></div>
+      <div *ngIf="showNavigation[i]" class="swiper-button-prev"></div>
+    </div>
+
+     <div class="container-images">
+      <img src="./assets/img/post-image.jpg" alt="user post image">
+      <img src="./assets/img/post-image.jpg" alt="user post image">
+    </div>
+  </div>
+  <div class="user-actions d-flex align-items-center pt-2">
+    <div class="d-flex align-items-center add-margin-right">
+      <i class="fa-regular fa-heart"></i>
+       <i class="fa-solid fa-heart"></i>
+      <p>3</p>
+    </div>
+    <div class="d-flex align-items-center">
+      <i class="fa-solid fa-comment"></i>
+      <p>3</p>
+    </div>
+  </div>
+</div> -->
+
+
+<div class="swiper mySwiper">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">Slide 1</div>
+    <div class="swiper-slide">Slide 2</div>
+    <div class="swiper-slide">Slide 3</div>
+    <div class="swiper-slide">Slide 4</div>
+    <div class="swiper-slide">Slide 5</div>
+    <div class="swiper-slide">Slide 6</div>
+    <div class="swiper-slide">Slide 7</div>
+    <div class="swiper-slide">Slide 8</div>
+    <div class="swiper-slide">Slide 9</div>
+  </div>
+  <div class="swiper-button-next"></div>
+  <div class="swiper-button-prev"></div>
+</div>

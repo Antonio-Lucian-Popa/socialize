@@ -1,0 +1,31 @@
+<h2 mat-dialog-title>{{ title }}</h2>
+<button mat-icon-button mat-dialog-close aria-label="Close dialog" class="bnt-close">
+  <mat-icon>close</mat-icon>
+</button>
+<div mat-dialog-content class="dialog-content">
+  <form [formGroup]="postForm" (ngSubmit)="onSubmit()" class="w-100">
+    <div class="user-profile-info d-flex align-items-center justify-content-start">
+      <div class="profile-image">
+        <img src="./assets/img/female.jpeg" alt="user profile image">
+      </div>
+      <p class="username">Melissa Adam</p>
+    </div>
+    <textarea #postInput class="post-input w-100 mt-3 mb-3" formControlName="postContent"
+      placeholder="Cosa hai in mente?"></textarea>
+
+    <div class="container-icons d-flex align-items-center justify-content-between">
+      <span>Add on your post</span>
+      <div class="d-flex align-items-center">
+        <div class="custom-file d-flex align-items-center">
+          <label for="fileInput" class="d-flex align-items-center justify-content-center">
+            <mat-icon class="material-symbols-outlined">
+              image
+            </mat-icon>
+          </label>
+          <input id="fileInput" type="file" style="display:none" (change)="onFileSelected($event)">
+        </div>
+      </div>
+    </div>
+    <button [disabled]="true" type="submit" class="btn-publish">Publish</button>
+  </form>
+</div>

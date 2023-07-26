@@ -1,0 +1,11 @@
+.container-home {
+  min-height: 100vh;
+  .feed {
+    width: 100%;
+    height: 100%;
+
+    .container-title {
+      width: 25rem;
+    }
+  }
+}
