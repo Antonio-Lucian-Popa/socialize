@@ -25,7 +25,7 @@ export class CreatePostComponent {
   constructor(private dialog: MatDialog) {
   }
 
-  openImageDialog() {
+  openCreatePostDialog() {
     const dialogRef = this.dialog.open(CreatePostDialogComponent, {
       width: '400px',
       data: {

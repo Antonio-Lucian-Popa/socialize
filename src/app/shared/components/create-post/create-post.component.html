@@ -18,7 +18,7 @@
 </div> -->
 
 <form class="container-create-post mb-5">
-  <div class="post-container" (click)="openImageDialog()">
+  <div class="post-container" (click)="openCreatePostDialog()">
     <textarea class="post-input" placeholder="Cosa hai in mente?" rows="1"></textarea>
     <div class="actions-container">
       <div class="custom-file">
@@ -27,7 +27,7 @@
             image
           </mat-icon>
         </label>
-        <input id="fileInput" type="file" style="display:none">
+        <input id="imageInput" type="file" style="display:none">
       </div>
       <div class="spacer"></div>
       <i class="fa-solid fa-paper-plane"></i>
