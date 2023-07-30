@@ -7,7 +7,7 @@
 * Refresh token
 
 ## Technologies
-- Angular 13
+- Angular 16
 - Reactive Form
 - Http
 - Bootstrap
