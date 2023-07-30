@@ -1,11 +1,66 @@
 .container-home {
   min-height: 100vh;
+
   .feed {
-    width: 100%;
+    width: calc(100% - 15rem);
     height: 100%;
 
     .container-title {
       width: 25rem;
+    }
+  }
+
+  .container-popular-user {
+    position: fixed;
+    width: 15rem;
+    right: 0;
+    height: 100%;
+    margin-right: 2rem;
+
+    .user-suggestion {
+      width: 15rem;
+      height: 6rem;
+      position: relative;
+
+      .user-img {
+        width: 50px;
+        height: 50px;
+        z-index: 2;
+
+        img {
+          width: 100%;
+          height: 100%;
+          border-radius: 50%;
+        }
+      }
+
+      .btn-follow {
+        border: none;
+        background: #8f8fed;
+        color: #ffff;
+        border-radius: 5px;
+        z-index: 2;
+      }
+    }
+
+    .user-suggestion::before {
+      content: "";
+      background-image: url("../../../assets/img/post-image.jpg");
+      background-position: center;
+      /* Center the image */
+      background-repeat: no-repeat;
+      /* Do not repeat the image */
+      background-size: cover;
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      bottom: 0px;
+      left: 0px;
+      opacity: 0.5;
+    }
+
+    .container-user-information {
+      margin: 0 0.5rem 0.5rem 0.5rem;
     }
   }
 }

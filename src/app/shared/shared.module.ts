@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
@@ -12,6 +12,9 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CreatePostDialogComponent } from './components/create-post-dialog/create-post-dialog.component';
 import { PostComponent } from './components/post/post.component';
 import {MatMenuModule} from '@angular/material/menu';
+import { register } from 'swiper/element/bundle';
+// register Swiper custom elements
+register();
 
 
 const NB_MODULES: any[] = [
@@ -39,6 +42,7 @@ const COMPONENTS: any[] = [
     CommonModule,
     ...NB_MODULES
   ],
-  exports: [...COMPONENTS, ...NB_MODULES]
+  exports: [...COMPONENTS, ...NB_MODULES],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA]
 })
 export class SharedModule { }
