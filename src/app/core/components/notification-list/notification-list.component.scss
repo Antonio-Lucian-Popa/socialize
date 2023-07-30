@@ -1,0 +1,20 @@
+.container-notification {
+  min-height: 100vh;
+  padding-left: 4rem;
+  padding-right: 4rem;
+
+  .notification-list {
+    .notification {
+      border-bottom: 2px solid #efefef;
+      padding-bottom: 1rem;
+      cursor: pointer;
+
+      .red {
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        background-color: red;
+      }
+    }
+  }
+}

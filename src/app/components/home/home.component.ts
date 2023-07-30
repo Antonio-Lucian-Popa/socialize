@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthInterceptor } from 'src/app/auth/auth.interceptor';
 import { AuthService } from 'src/app/auth/services/auth.service';
@@ -12,7 +13,16 @@ import { AlertService } from 'src/app/shared/services/alert/alert.service';
 })
 export class HomeComponent implements OnInit {
 
-  constructor(private authService: AuthService, private router: Router, private alertService: AlertService) { }
+  searchUser = this.fb.group({
+    value: ""
+  });
+
+  constructor(
+    private authService: AuthService,
+    private router: Router,
+    private alertService: AlertService,
+    private fb: FormBuilder
+    ) { }
 
   ngOnInit(): void {
     const alertSetting = {
@@ -23,6 +33,11 @@ export class HomeComponent implements OnInit {
       closeButton: true
     }
     this.alertService.openPopUpAlert(`testing`, 'Conflict', alertSetting);
+
+    this.searchUser.get("value")?.valueChanges.subscribe(val => {
+      console.log(val);
+      // TODO: add logic for show the user that we search
+    });
   }
 
   logout(): void {

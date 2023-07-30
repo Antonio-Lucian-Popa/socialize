@@ -9,37 +9,10 @@
     <app-post></app-post>
   </div>
   <div class="container-popular-user flex-column">
-    <form class="form-inline mt-3 mb-5">
-      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+    <form class="form-inline mt-3 mb-5" [formGroup]="searchUser">
+      <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" formControlName="value">
     </form>
 
-    <div class="d-flex flex-column mt-2">
-      <div class="user-suggestion d-flex align-items-end mb-4">
-        <div class="black-cover"></div>
-       <div class="container-user-information d-flex align-items-center justify-content-between w-100">
-        <div class="d-flex align-items-center">
-          <div class="user-img">
-            <img src="./assets/img/female.jpeg" alt="user image">
-          </div>
-          <span class="username">Andreea Alina</span>
-        </div>
-        <button class="btn-follow">Follow</button>
-       </div>
-      </div>
-
-      <div class="user-suggestion d-flex align-items-end mb-4">
-        <div class="black-cover"></div>
-       <div class="container-user-information d-flex align-items-center justify-content-between w-100">
-        <div class="d-flex align-items-center">
-          <div class="user-img">
-            <img src="./assets/img/female.jpeg" alt="user image">
-          </div>
-          <span class="username">Andreea Alina</span>
-        </div>
-        <button class="btn-follow">Follow</button>
-       </div>
-      </div>
-
-    </div>
+    <app-user-list></app-user-list>
   </div>
 </div>

@@ -1,0 +1,67 @@
+.user-suggestion {
+  width: 100%;
+  height: 6rem;
+  position: relative;
+
+  .user-img {
+    width: 50px;
+    height: 50px;
+    z-index: 2;
+
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+    }
+  }
+
+  .btn-follow {
+    border: none;
+    background: #8f8fed;
+    color: #ffff;
+    border-radius: 5px;
+    z-index: 2;
+  }
+
+  .btn-unfollow {
+    border: none;
+    background: #8f8fed;
+    color: #ffff;
+    border-radius: 5px;
+    z-index: 2;
+  }
+}
+
+.user-suggestion {
+  background-position: center;
+  /* Center the image */
+  background-repeat: no-repeat;
+  /* Do not repeat the image */
+  background-size: cover;
+  // position: absolute;
+  // top: 0px;
+  // right: 0px;
+  // bottom: 0px;
+  // left: 0px;
+ // opacity: 0.5;
+}
+
+.container-user-information {
+  margin: 0 0.5rem 0.5rem 0.5rem;
+
+  .username {
+    z-index: 2;
+    color: #ffff;
+    margin-left: 0.4rem;
+  }
+}
+
+.black-cover {
+  background-color: black;
+  position: absolute;
+  opacity: 0.5;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}

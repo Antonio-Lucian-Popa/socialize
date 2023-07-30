@@ -1,0 +1,16 @@
+<div class="d-flex flex-column mt-2">
+  <div class="user-suggestion d-flex align-items-end mb-4" *ngFor="let user of users" [style]="'background-image: url(' + user.backgroundImage + ');'">
+    <div class="black-cover"></div>
+   <div class="container-user-information d-flex align-items-center justify-content-between w-100">
+    <div class="d-flex align-items-center">
+      <div class="user-img">
+        <img src="./assets/img/female.jpeg" alt="user image">
+      </div>
+      <span class="username">{{user.firstName}} {{user.lastName}}</span>
+    </div>
+    <button *ngIf="!user.isFollowByMe" class="btn-follow" (click)="follow(user.id)">Follow</button>
+    <button *ngIf="user.isFollowByMe" class="btn-unfollow" (click)="unfollow(user.id)">Unfollow</button>
+   </div>
+  </div>
+
+</div>

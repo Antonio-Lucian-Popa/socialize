@@ -13,6 +13,7 @@ import { CreatePostDialogComponent } from './components/create-post-dialog/creat
 import { PostComponent } from './components/post/post.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { register } from 'swiper/element/bundle';
+import { UserListComponent } from './components/user-list/user-list.component';
 // register Swiper custom elements
 register();
 
@@ -32,12 +33,13 @@ const NB_MODULES: any[] = [
 
 const COMPONENTS: any[] = [
   CreatePostComponent,
-  PostComponent
+  PostComponent,
+  UserListComponent
 ];
 
 
 @NgModule({
-  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent],
+  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent, UserListComponent],
   imports: [
     CommonModule,
     ...NB_MODULES
