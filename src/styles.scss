@@ -39,6 +39,7 @@ $jwt-form-authentication-theme: mat.define-light-theme((color: (primary: $jwt-fo
 html,
 body {
   height: 100%;
+  outline: none!important;
 }
 
 body {

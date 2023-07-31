@@ -1,0 +1,60 @@
+.container-discover {
+  min-height: 100vh;
+  padding-left: 4rem;
+  padding-right: 4rem;
+
+  .container-title {
+    border-bottom: 2px solid #efefef;
+  }
+
+  // ---------------search-------------------
+  .form {
+    position: relative;
+  }
+
+  .form .fa-search {
+    position: absolute;
+    top: 15px;
+    left: 20px;
+    color: #9ca3af;
+
+  }
+
+  .form span {
+    position: absolute;
+    right: 17px;
+    top: 13px;
+    padding: 2px;
+    border-left: 1px solid #d1d5db;
+
+  }
+
+  .left-pan {
+    padding-left: 7px;
+  }
+
+  .left-pan i {
+    padding-left: 10px;
+  }
+
+  .form-input {
+
+    height: 45px;
+    text-indent: 33px;
+    border-radius: 10px;
+  }
+
+  // ---------------End search-------------------
+
+  .container-image-list {
+    .container-image {
+      width: 8rem;
+      cursor: pointer;
+      //margin-right: 0.5rem;
+      img {
+        width: 100%;
+        border-radius: 2px;
+      }
+    }
+  }
+}

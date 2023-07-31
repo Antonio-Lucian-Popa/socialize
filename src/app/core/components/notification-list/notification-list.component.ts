@@ -13,21 +13,17 @@ export class NotificationListComponent implements OnInit {
   notifications: any[] = []; // You would retrieve your notifications and store them here
   categorizedNotifications: { [key: string]: any[] } = {};
 
+  private skip = 0; // Keep track of the number of notifications loaded
+  private limit = 5; // Decide how many notifications to load each time
+
   constructor(private notificationService: NotificationService, private datePipe: DatePipe, private relativeTimePipe: RelativeTimePipe) { }
 
   ngOnInit(): void {
-    this.notificationService.getAllNotification().subscribe(notification => {
-      // const todayNotification = notification.find(noti => {
-      //   if(this.isEqualToday(noti.createdAt)) {
-      //     return noti;
-      //   }
-      this.categorizeNotifications(notification);
-      console.log(this.categorizeNotifications);
-      //});
-
-      //console.log(todayNotification);
-    });
-    // find the today notification and yestarday and place them in 2 array
+    // this.notificationService.getAllNotification().subscribe(notification => {
+    //   this.categorizeNotifications(notification);
+    //   console.log(this.categorizeNotifications);
+    // });
+    this.loadMore();
   }
 
   categorizeNotifications(notifications: any[]) {
@@ -53,16 +49,6 @@ export class NotificationListComponent implements OnInit {
     });
   }
 
-
-  isEqualToday(dateFromResponse: string): boolean {
-    // Transform the response date and today's date to 'yyyy-MM-dd' format
-    let responseDate = this.datePipe.transform(new Date(dateFromResponse), 'yyyy-MM-dd');
-    let todayDate = this.datePipe.transform(new Date(), 'yyyy-MM-dd');
-
-    // Compare if both dates are the same
-    return responseDate === todayDate;
-  }
-
   openNotification(notificationId: string): void {
     console.log(notificationId);
     // TODO: go to the notification detail, we need another component that is opened when the user click on notification,
@@ -76,6 +62,16 @@ export class NotificationListComponent implements OnInit {
     //   }
     //   return notification;
     // })
+  }
+
+  loadMore(): void {
+    this.notificationService
+      .getAllNotification(this.skip, this.limit)
+      .subscribe((notifications) => {
+        this.notifications = [...this.notifications, ...notifications];
+        this.skip += this.limit;
+        this.categorizeNotifications(notifications);
+      });
   }
 
 }

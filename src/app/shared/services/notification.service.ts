@@ -11,7 +11,12 @@ export class NotificationService {
 
   constructor(private http: HttpClient) { }
 
-  getAllNotification(): Observable<any[]> {
-    return this.http.get<any[]>(`${this.URL_LINK}/notifications`);
+  // getAllNotification(): Observable<any[]> {
+  //   return this.http.get<any[]>(`${this.URL_LINK}/notifications`);
+  // }
+
+  getAllNotification(page: number, size: number): Observable<any[]> {
+    return this.http.get<any[]>(`${this.URL_LINK}?page=${page}&size=${size}`);
   }
+
 }

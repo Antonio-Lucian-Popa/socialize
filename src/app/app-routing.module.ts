@@ -13,6 +13,10 @@ const routes: Routes = [
     loadChildren: () => import('./core/components/notification/notification.module').then(m => m.NotificationModule)
   },
   {
+    path: 'discover',
+    loadChildren: () => import('./components/discover/discover.module').then(m => m.DiscoverModule)
+  },
+  {
     path: 'login',
     component: LoginComponent
   },
