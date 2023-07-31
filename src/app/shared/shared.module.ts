@@ -1,5 +1,5 @@
 import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
@@ -14,6 +14,7 @@ import { PostComponent } from './components/post/post.component';
 import {MatMenuModule} from '@angular/material/menu';
 import { register } from 'swiper/element/bundle';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { RelativeTimePipe } from './pipe/relative-time.pipe';
 // register Swiper custom elements
 register();
 
@@ -39,12 +40,13 @@ const COMPONENTS: any[] = [
 
 
 @NgModule({
-  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent, UserListComponent],
+  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent, UserListComponent, RelativeTimePipe],
   imports: [
     CommonModule,
     ...NB_MODULES
   ],
-  exports: [...COMPONENTS, ...NB_MODULES],
-  schemas: [CUSTOM_ELEMENTS_SCHEMA]
+  exports: [...COMPONENTS, ...NB_MODULES, RelativeTimePipe],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  providers: [DatePipe, RelativeTimePipe]
 })
 export class SharedModule { }

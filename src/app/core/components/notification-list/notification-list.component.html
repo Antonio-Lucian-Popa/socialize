@@ -3,22 +3,35 @@
     <h3>Notifications</h3>
   </div>
 
-  <div class="notification-list">
+  <div class="notification-list d-flex flex-column align-items-center mt-5">
 
-    <div class="notification d-flex align-items-center justify-content-between mb-4" *ngFor="let notification of notificationList" (click)="openNotification(notification.id)">
-      <div class="container-icon" [ngSwitch]="notification.typeOfIcon">
+    <div class="" *ngFor="let date of categorizedNotifications | keyvalue">
+      <span class="subtitle mb-3">{{ date.key }}</span>
+
+      <div class="notification d-flex align-items-center justify-content-between mb-4"
+        *ngFor="let notification of date.value" (click)="openNotification(notification.id)">
+        <!-- <div class="container-icon" [ngSwitch]="notification.typeOfIcon">
         <mat-icon class="material-symbols-outlined" *ngSwitchCase="'like'">
           favorite
         </mat-icon>
         <mat-icon class="material-symbols-outlined" *ngSwitchCase="'comment'">
           chat
         </mat-icon>
+      </div> -->
+        <div class="d-flex align-items-center">
+          <div class="user-img">
+            <img src="./assets/img/female.jpeg" alt="user image">
+          </div>
+          <div class="d-flex flex-column align-items-start">
+            <div class="description">
+              <strong>{{notification.from}}</strong>
+              {{notification.description}}
+            </div>
+            <span class="date">{{notification.createdAt | relativeTime}}</span>
+          </div>
+        </div>
+        <div class="red" *ngIf="notification.isNew"></div>
       </div>
-      <div class="description">
-        <strong>{{notification.from}}</strong>
-        {{notification.description}}
-      </div>
-      <div class="red"></div>
     </div>
 
   </div>
