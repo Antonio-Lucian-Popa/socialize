@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 
 import { DiscoverRoutingModule } from './discover-routing.module';
 import { DiscoverComponent } from './discover.component';
+import { SharedModule } from 'src/app/shared/shared.module';
 
 
 
@@ -12,7 +13,8 @@ import { DiscoverComponent } from './discover.component';
   ],
   imports: [
     CommonModule,
-    DiscoverRoutingModule
+    DiscoverRoutingModule,
+    SharedModule
   ]
 })
 export class DiscoverModule { }

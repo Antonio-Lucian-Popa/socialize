@@ -4,10 +4,10 @@
   </div>
 
   <div class="d-flex flex-column align-items-start mt-5">
-    <div class="form">
+    <form class="form" [formGroup]="searchUser">
       <i class="fa fa-search"></i>
-      <input type="text" class="form-control form-input" placeholder="Search anything...">
-    </div>
+      <input type="text" class="form-control form-input" placeholder="Search" formControlName="value">
+    </form>
   </div>
 
   <div class="container-image-list d-flex flex-wrap mt-5">

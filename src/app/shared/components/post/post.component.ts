@@ -1,5 +1,6 @@
-import { AfterViewInit, Component, OnInit } from '@angular/core';
+import { AfterViewInit, Component, Input, OnInit } from '@angular/core';
 import { PostService } from '../../services/post.service';
+import { Post } from '../../interfaces/post';
 
 @Component({
   selector: 'app-post',
@@ -8,13 +9,17 @@ import { PostService } from '../../services/post.service';
 })
 export class PostComponent implements OnInit{
 
+  @Input() post: Post | undefined;
 
   posts: any[] = [];
 
   constructor(private postService: PostService) {}
 
+  //TODO: Make post component to work also with post dialog and show the input post
   ngOnInit(): void {
-    this.loadPosts();
+    if(!this.post) {
+      this.loadPosts();
+    }
   }
 
   ngAfterViewInit() {

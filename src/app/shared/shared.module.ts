@@ -15,6 +15,7 @@ import {MatMenuModule} from '@angular/material/menu';
 import { register } from 'swiper/element/bundle';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { RelativeTimePipe } from './pipe/relative-time.pipe';
+import { ViewPostDialogComponent } from './components/view-post-dialog/view-post-dialog.component';
 // register Swiper custom elements
 register();
 
@@ -40,7 +41,7 @@ const COMPONENTS: any[] = [
 
 
 @NgModule({
-  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent, UserListComponent, RelativeTimePipe],
+  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent, UserListComponent, RelativeTimePipe, ViewPostDialogComponent],
   imports: [
     CommonModule,
     ...NB_MODULES
