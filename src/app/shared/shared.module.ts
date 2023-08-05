@@ -16,6 +16,7 @@ import { register } from 'swiper/element/bundle';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { RelativeTimePipe } from './pipe/relative-time.pipe';
 import { ViewPostDialogComponent } from './components/view-post-dialog/view-post-dialog.component';
+import { PostDetailComponent } from '../components/discover/post-detail/post-detail.component';
 // register Swiper custom elements
 register();
 
@@ -36,6 +37,7 @@ const NB_MODULES: any[] = [
 const COMPONENTS: any[] = [
   CreatePostComponent,
   PostComponent,
+  PostDetailComponent,
   UserListComponent
 ];
 

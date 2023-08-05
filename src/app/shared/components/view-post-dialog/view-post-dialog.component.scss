@@ -30,7 +30,7 @@ button[mat-dialog-close] {
   }
 
   .profile-image {
-    width: 2rem;
+    width: 3rem;
 
     img {
       width: 100%;
@@ -94,8 +94,9 @@ button[mat-dialog-close] {
 
 
   .container-images {
-   // width: 100%;
-   width: 800px;
+    position: fixed;
+    height: 50vh;
+    width: 26rem;
 
 
     img {
@@ -113,7 +114,7 @@ button[mat-dialog-close] {
   }
 
   .container-information {
-    width: 100%;
+    width: calc(100% - 26rem);
     padding: 0 2rem;
 
     .date-post-info {
@@ -124,12 +125,19 @@ button[mat-dialog-close] {
   }
 }
 
-.comment-post {
-  margin: 0!important;
-
+.container-info {
   .username {
     margin: 0!important;
+    font-size: 0.9rem;
   }
+}
+
+.user-info {
+  margin-left: 1rem;
+}
+
+.comment-post {
+  margin: 0!important;
 }
 
 .container-info-comment {
@@ -137,11 +145,19 @@ button[mat-dialog-close] {
 }
 
 .container-post-comments {
+  padding-left: 2rem;
   .profile-image {
     width: 3rem;
   }
 }
 
+.load-comments-btn {
+  border: none;
+  background: cadetblue;
+  border-radius: 5px;
+  padding: 6px;
+  font-size: 0.8rem;
+}
 
 @media (max-width: 768px) {
   .swiper-button-next, .swiper-button-prev {

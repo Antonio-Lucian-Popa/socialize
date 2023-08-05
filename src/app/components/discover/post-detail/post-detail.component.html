@@ -1,0 +1,103 @@
+<div class="container-post-detail pb-5">
+
+
+  <!-----------------Header---------------------->
+  <div class="header mt-4 pb-3 d-flex align-items-center justify-content-between">
+    <mat-icon class="material-symbols-outlined">
+      arrow_back_ios
+    </mat-icon>
+    <h1>{{isCommentOpened ? 'Comments' : 'Post'}}</h1>
+    <div class="_ab18 _ab1b"></div>
+  </div>
+  <!-----------------End Header---------------------->
+
+  <div class="container-post-detail">
+    <div class="user-information d-flex align-items-center justify-content-between" *ngIf="!isCommentOpened">
+      <div class="d-flex align-items-center justify-content-start">
+        <div class="profile-image">
+          <img src="./assets/img/female.jpeg" alt="user profile image">
+        </div>
+        <div class="container-info d-flex align-items-center">
+          <p class="username">Melissa Adam</p>
+          <p class="date-post-info">- 1h</p>
+        </div>
+      </div>
+      <!--------------Option btn for post---------->
+      <i [matMenuTriggerFor]="menu" class="fa-solid fa-ellipsis-vertical"></i>
+      <mat-menu #menu="matMenu" class="menu-option-post">
+        <button mat-menu-item>
+          <mat-icon>dialpad</mat-icon>
+          <span>Redial</span>
+        </button>
+        <button mat-menu-item disabled>
+          <mat-icon>voicemail</mat-icon>
+          <span>Check voice mail</span>
+        </button>
+        <button mat-menu-item>
+          <mat-icon>notifications_off</mat-icon>
+          <span>Disable alerts</span>
+        </button>
+      </mat-menu>
+      <!--------------End Option btn for post---------->
+
+    </div>
+    <div class="container-images" *ngIf="!isCommentOpened">
+      <swiper-container slides-per-view="1" loop="false" css-mode="false" centeredSlides="true" pagination="true"
+        pagination-dynamic-bullets="true" navigation="true">
+        <swiper-slide>
+          <img class="img-swip" src="./assets/img/post-image.jpg" alt="user post image">
+        </swiper-slide>
+        <swiper-slide>Slide 2</swiper-slide>
+        <swiper-slide>Slide 3</swiper-slide>
+      </swiper-container>
+    </div>
+    <div class="bottom">
+      <div class="user-actions d-flex align-items-center pt-2" *ngIf="!isCommentOpened">
+        <div class="d-flex align-items-center add-margin-right">
+          <!-- <i class="fa-regular fa-heart"></i> -->
+          <i class="fa-solid fa-heart"></i>
+          <p>3</p>
+        </div>
+        <div class="d-flex align-items-center">
+          <i class="fa-solid fa-comment"></i>
+          <p>{{numberOfComments}}</p>
+        </div>
+      </div>
+
+      <div class="post-info">
+        <div class="description">
+          <span class="d-inline"> <!----------d-inline help to have text and name of the user in the same line-->
+            <a href="#" rel="noopener noreferrer">Melissa Adam</a>
+            Watching pic in pic video while scrolling this platform is great
+          </span>
+        </div>
+        <div class="d-flex btn-comments" *ngIf="!isCommentOpened">
+          <a href="#" (click)="loadComments()">View all {{numberOfComments}} comments</a>
+        </div>
+        <div class="d-flex flex-column mt-4">
+          <div class="comment">
+            <div class="d-flex align-items-center justify-content-between">
+              <div class="d-flex align-items-center justify-content-start max-comment-width">
+                <div class="profile-image">
+                  <img src="./assets/img/female.jpeg" alt="user profile image">
+                </div>
+                <div class="container-info d-flex align-items-center">
+                  <span class="d-inline">
+                    <!----------d-inline help to have text and name of the user in the same line-->
+                    <a href="#" rel="noopener noreferrer">Melissa Adam</a>
+                    Watching pic in pic video while scrolling this platform is great
+                  </span>
+                </div>
+              </div>
+              <mat-icon class="material-symbols-outlined">
+                favorite
+              </mat-icon>
+            </div>
+            <p class="date-post-info">1h</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</div>
