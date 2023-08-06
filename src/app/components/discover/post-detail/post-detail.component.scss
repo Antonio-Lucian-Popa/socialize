@@ -56,6 +56,7 @@
         .description {
           border-bottom: 1px solid #efeaea;
           padding-bottom: 10px;
+
           a {
             text-decoration: none;
             font-weight: 600;
@@ -165,6 +166,90 @@
   width: 100%;
 }
 
+.comment {
+  .container-info {
+    width: 33rem !important;
+  }
+}
+
+.btn-post-comment {
+  font-weight: 400;
+  background: transparent;
+  color: rgb(179, 219, 255);
+  border: none;
+  opacity: .5;
+}
+
+.container-user-input {
+  align-items: center;
+  background-color: #efefef;
+  border-bottom: 1px solid rgb(219, 219, 219);
+  border-top: 1px solid rgb(219, 219, 219);
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  padding: 8px 0;
+
+  .profile-image {
+    width: 1.8rem !important;
+    margin: 0 16px;
+
+    img {
+      width: 100%;
+      border-radius: 50%;
+    }
+  }
+}
+
+.user-input-form {
+  background-color: rgb(255, 255, 255);
+  border: 1px solid rgb(219, 219, 219);
+  border-radius: 30px;
+  margin-right: 16px;
+  padding: 12px 16px;
+
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-shrink: 1;
+  font: inherit;
+  font-size: 100%;
+}
+
+.user-input-container {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-shrink: 1;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+
+  .user-input {
+    background-color: rgb(255, 255, 255);
+    resize: none;
+    border-left: none;
+    border-right: none;
+    width: 0;
+    padding-left: 0;
+    padding-top: 0;
+    color: rgb(0, 0, 0);
+    padding-right: 0;
+    flex-grow: 1;
+    padding-bottom: 0;
+    outline: none;
+    border-top: none;
+    border-bottom: none;
+    max-width: 100%;
+    font-size: 14px;
+    height: auto;
+    min-height: 18px;
+    overflow-y: hidden;
+  }
+}
 
 @media (max-width: 768px) {
 

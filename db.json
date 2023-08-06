@@ -25,8 +25,36 @@
   "comments": [
     {
       "id": 1,
-      "body": "some comment",
-      "postId": 1
+      "value": "Watching pic in pic video while scrolling this platform is great",
+      "createdAt": "2023-07-30T16:28:15+0000",
+      "user": {
+        "id": 34,
+        "firstName": "Melissa",
+        "lastName": "Dwane",
+        "profileImage": "./assets/img/female.jpeg"
+      }
+    },
+    {
+      "id": 2,
+      "value": "Wow, those views are absolutely breathtaking! 😍 It looks like a slice of paradise. Hope you're soaking up every moment of this vacation and recharging. Safe travels and enjoy every bit! 🌴🌊☀️ #VacationGoals",
+      "createdAt": "2023-07-30T16:28:15+0000",
+      "user": {
+        "id": 34,
+        "firstName": "Melissa",
+        "lastName": "Dwane",
+        "profileImage": "./assets/img/female.jpeg"
+      }
+    },
+    {
+      "id": 3,
+      "value": "Wow, these views are absolutely breathtaking! 😍 The serenity and beauty of this place is just what one needs for a perfect vacation. Hope you have the most rejuvenating time there! 🌴☀️ #WanderlustGoals",
+      "createdAt": "2023-07-30T16:28:15+0000",
+      "user": {
+        "id": 34,
+        "firstName": "Melissa",
+        "lastName": "Dwane",
+        "profileImage": "./assets/img/female.jpeg"
+      }
     }
   ],
   "profile": {

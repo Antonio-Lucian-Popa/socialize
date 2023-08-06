@@ -3,7 +3,7 @@
 
   <!-----------------Header---------------------->
   <div class="header mt-4 pb-3 d-flex align-items-center justify-content-between">
-    <mat-icon class="material-symbols-outlined">
+    <mat-icon class="material-symbols-outlined" (click)="closeComments()">
       arrow_back_ios
     </mat-icon>
     <h1>{{isCommentOpened ? 'Comments' : 'Post'}}</h1>
@@ -52,6 +52,21 @@
       </swiper-container>
     </div>
     <div class="bottom">
+
+      <!-------User input comment----------->
+      <div class="container-user-input d-flex align-items-center justify-content-between mt-3" *ngIf="isCommentOpened">
+        <div class="profile-image">
+          <img src="./assets/img/female.jpeg" alt="user profile image">
+        </div>
+        <form class="user-input-form">
+          <div class="user-input-container d-flex align-items-center justify-content-between">
+            <textarea #expandableTextarea aria-label="Add a comment…" placeholder="Add a comment…" autocomplete="off" autocorrect="off"
+              class="user-input"></textarea>
+            <button type="button" class="btn-post-comment">Post</button>
+          </div>
+        </form>
+      </div>
+      <!-------End User input comment----------->
       <div class="user-actions d-flex align-items-center pt-2" *ngIf="!isCommentOpened">
         <div class="d-flex align-items-center add-margin-right">
           <!-- <i class="fa-regular fa-heart"></i> -->
@@ -67,35 +82,42 @@
       <div class="post-info">
         <div class="description">
           <span class="d-inline"> <!----------d-inline help to have text and name of the user in the same line-->
-            <a href="#" rel="noopener noreferrer">Melissa Adam</a>
+            <a rel="noopener noreferrer">Melissa Adam</a>
             Watching pic in pic video while scrolling this platform is great
           </span>
         </div>
         <div class="d-flex btn-comments" *ngIf="!isCommentOpened">
-          <a href="#" (click)="loadComments()">View all {{numberOfComments}} comments</a>
+          <a (click)="loadComments()">View all {{numberOfComments}} comments</a>
         </div>
-        <div class="d-flex flex-column mt-4">
-          <div class="comment">
-            <div class="d-flex align-items-center justify-content-between">
-              <div class="d-flex align-items-center justify-content-start max-comment-width">
-                <div class="profile-image">
-                  <img src="./assets/img/female.jpeg" alt="user profile image">
+
+        <!---------------Comments section--------------->
+        <div class="d-flex flex-column mt-4" *ngIf="isCommentOpened">
+          <div class="d-flex flex-column" *ngIf="comments && comments.length > 0">
+            <div class="comment mb-3" *ngFor="let comment of comments">
+              <div class="d-flex align-items-center justify-content-between">
+                <div class="d-flex align-items-start justify-content-start max-comment-width">
+                  <div class="profile-image">
+                    <img [src]="comment.user.profileImage" alt="user profile image">
+                  </div>
+                  <div class="container-info d-flex align-items-center">
+                    <span class="d-inline">
+                      <!----------d-inline help to have text and name of the user in the same line-->
+                      <a rel="noopener noreferrer">{{comment.user.firstName}} {{comment.user.lastName}}</a>
+                      {{comment.value}}
+                    </span>
+                  </div>
                 </div>
-                <div class="container-info d-flex align-items-center">
-                  <span class="d-inline">
-                    <!----------d-inline help to have text and name of the user in the same line-->
-                    <a href="#" rel="noopener noreferrer">Melissa Adam</a>
-                    Watching pic in pic video while scrolling this platform is great
-                  </span>
-                </div>
+                <mat-icon class="material-symbols-outlined">
+                  favorite
+                </mat-icon>
               </div>
-              <mat-icon class="material-symbols-outlined">
-                favorite
-              </mat-icon>
+              <p class="date-post-info">{{comment.createdAt | relativeTime}}</p>
             </div>
-            <p class="date-post-info">1h</p>
           </div>
+          <app-loader class="d-flex align-items-center justify-content-center" [typeOfLoader]="'second'"
+            *ngIf="!comments || comments.length === 0"></app-loader>
         </div>
+        <!---------------End Comments section--------------->
       </div>
     </div>
   </div>

@@ -17,6 +17,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
 import { RelativeTimePipe } from './pipe/relative-time.pipe';
 import { ViewPostDialogComponent } from './components/view-post-dialog/view-post-dialog.component';
 import { PostDetailComponent } from '../components/discover/post-detail/post-detail.component';
+import { LoaderComponent } from './components/loader/loader.component';
 // register Swiper custom elements
 register();
 
@@ -38,12 +39,13 @@ const COMPONENTS: any[] = [
   CreatePostComponent,
   PostComponent,
   PostDetailComponent,
-  UserListComponent
+  UserListComponent,
+  LoaderComponent
 ];
 
 
 @NgModule({
-  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent, UserListComponent, RelativeTimePipe, ViewPostDialogComponent],
+  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent, UserListComponent, RelativeTimePipe, ViewPostDialogComponent, LoaderComponent],
   imports: [
     CommonModule,
     ...NB_MODULES
