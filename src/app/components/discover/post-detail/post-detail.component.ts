@@ -1,7 +1,7 @@
 import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Comment } from 'src/app/shared/interfaces/comment';
-import { Post } from 'src/app/shared/interfaces/post';
+import { Post, User } from 'src/app/shared/interfaces/post';
 import { CommentService } from 'src/app/shared/services/comment.service';
 
 @Component({
@@ -16,7 +16,7 @@ export class PostDetailComponent implements OnInit {
 
   postId: string | null = "";
   numberOfComments = 17;
-  postData: Post | undefined;
+  postData!: Post;
   comments: Comment[] = [];
 
   isCommentOpened = false;
@@ -62,6 +62,15 @@ export class PostDetailComponent implements OnInit {
         textareaEl.style.height = minHeight + 'px';
     }
 }
+
+checkIsUserLikePost(): boolean {
+  // TODO: de revazut cum sa iau user id
+  const userId = "123";
+  const isCurrentUserLike = this.postData!.userLikes.find(user => user.id === userId);
+  return isCurrentUserLike ? true : false;
+}
+
+
 
 
 }
