@@ -71,9 +71,11 @@ export class DiscoverComponent implements OnInit {
     if (this.windowWidth && this.windowWidth > 800) {
       const dialogRef = this.dialog.open(ViewPostDialogComponent, {
         width: '900px',
+        //height: '700px',
         data: {
           postId: postId
-        }
+        },
+        panelClass: "customDialog"
       });
 
       dialogRef.afterClosed().subscribe(result => {

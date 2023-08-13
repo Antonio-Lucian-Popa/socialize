@@ -22,7 +22,7 @@ export class ViewPostDialogComponent implements OnInit {
     }
 
   ngOnInit(): void {
-    this.postService.getPostById(this.postId).subscribe(post => this.post = post);
+   // this.postService.getPostById(this.postId).subscribe(post => this.post = post);
     this.post = {
       id: "1",
       description: "test",

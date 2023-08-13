@@ -114,8 +114,9 @@ button[mat-dialog-close] {
   }
 
   .container-information {
-    width: calc(100% - 26rem);
-    padding: 0 2rem;
+    overflow: auto;
+    // width: calc(100% - 26rem);
+    // padding: 0 2rem;
 
     .date-post-info {
       margin: 0 !important;
@@ -145,7 +146,7 @@ button[mat-dialog-close] {
 }
 
 .container-post-comments {
-  padding-left: 2rem;
+ // padding-left: 2rem;
   .profile-image {
     width: 3rem;
   }
@@ -163,4 +164,19 @@ button[mat-dialog-close] {
   .swiper-button-next, .swiper-button-prev {
     display: none;
   }
+}
+
+.dialog-content {
+  overflow: hidden!important;
+}
+
+.container-view-dialog {
+  overflow: hidden!important;
+}
+
+.image-cover-container {
+  background-position: center; /* Center the image */
+  background-repeat: no-repeat; /* Do not repeat the image */
+  background-size: cover;
+  height: 500px;
 }

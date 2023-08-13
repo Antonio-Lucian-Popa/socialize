@@ -61,3 +61,8 @@ body {
 //     display: none!important;
 //   }
 // }
+.customDialog {
+  .mat-mdc-dialog-surface .mdc-dialog__surface {
+    overflow: hidden!important;
+  }
+}
