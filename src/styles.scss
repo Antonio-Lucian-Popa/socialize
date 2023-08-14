@@ -61,8 +61,14 @@ body {
 //     display: none!important;
 //   }
 // }
+
+
 .customDialog {
-  .mat-mdc-dialog-surface .mdc-dialog__surface {
+  .mat-mdc-dialog-surface, .mdc-dialog__surface, .mat-mdc-dialog-content, .mdc-dialog__content {
     overflow: hidden!important;
+  }
+
+  .mat-dialog-content {
+    max-height: calc(100% - 32px)!important;
   }
 }

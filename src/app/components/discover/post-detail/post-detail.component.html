@@ -1,8 +1,8 @@
-<div class="container-post-detail pb-5">
+<div class="container-post-detail pb-5 flex flex-col h-full">
 
 
   <!-----------------Header---------------------->
-  <div class="header mt-4 pb-3 d-flex align-items-center justify-content-between">
+  <div class="header mt-4 pb-3 flex items-center justify-between">
     <mat-icon class="material-symbols-outlined" (click)="closeComments()">
       arrow_back_ios
     </mat-icon>
@@ -11,13 +11,13 @@
   </div>
   <!-----------------End Header---------------------->
 
-  <div class="container-post-detail">
-    <div class="user-information d-flex align-items-center justify-content-between" *ngIf="!isCommentOpened">
-      <div class="d-flex align-items-center justify-content-start">
+  <div class="container-post-detail flex flex-col h-full">
+    <div class="user-information flex items-center justify-between" *ngIf="!isCommentOpened">
+      <div class="flex items-center justify-start">
         <div class="profile-image">
           <img src="./assets/img/female.jpeg" alt="user profile image">
         </div>
-        <div class="container-info d-flex align-items-center">
+        <div class="container-info flex items-center ml-3">
           <p class="username">Melissa Adam</p>
           <p class="date-post-info">- 1h</p>
         </div>
@@ -43,9 +43,9 @@
     </div>
     <div class="container-images" *ngIf="!isCommentOpened">
       <swiper-container slides-per-view="1" loop="false" css-mode="false" centeredSlides="true" pagination="true"
-        pagination-dynamic-bullets="true" navigation="true">
+      pagination-dynamic-bullets="true" navigation="true" autoHeight="true" allowTouchMove="true" class="h-full">
         <swiper-slide>
-          <img class="img-swip" src="./assets/img/post-image.jpg" alt="user post image">
+          <img class="h-auto max-w-full" src="./assets/img/post-image.jpg" alt="user post image">
         </swiper-slide>
         <swiper-slide>Slide 2</swiper-slide>
         <swiper-slide>Slide 3</swiper-slide>
