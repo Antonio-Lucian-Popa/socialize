@@ -203,3 +203,22 @@
   background-size: cover;
   height: 500px;
 }
+
+
+::-webkit-scrollbar {
+  width: 5px; /* Larghezza della barra di scorrimento */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #bacee0; /* Colore della barra di scorrimento */
+  border-radius: 3px; /* Bordo arrotondato della barra di scorrimento */
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: lighten(#aac2d7, 20%); /* Sfumatura più chiara al passaggio del mouse */
+}
+
+::-webkit-scrollbar-track {
+  background-color: #f1f1f1; /* Colore dello sfondo della traccia della barra di scorrimento */
+  border-radius: 3px; /* Bordo arrotondato della traccia della barra di scorrimento */
+}

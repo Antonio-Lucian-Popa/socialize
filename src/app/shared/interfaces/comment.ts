@@ -1,8 +1,13 @@
+import { CommentSegment } from "./comment-segment";
 import { User } from "./post";
 
 export interface Comment {
   id: string;
-  value: string;
+  author: User;
   createdAt: string;
-  user: User;
+  formattedDate?: string;
+  content: string;
+  hasMoreSubcomments: boolean;
+  segments: CommentSegment[];
+  subcomments: Comment[];
 }

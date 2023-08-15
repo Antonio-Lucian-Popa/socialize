@@ -17,7 +17,7 @@ export class PostDetailComponent implements OnInit {
   postId: string | null = "";
   numberOfComments = 17;
   postData!: Post;
-  comments: Comment[] = [];
+  comments: any[] = []; // TODO: de schimbat key la object ca nu mai merg cu interfata Comment
 
   isCommentOpened = false;
 
