@@ -30,7 +30,17 @@ export class DiscoverComponent implements OnInit {
     },
     {
       id: 2,
-      value: "./assets/img/post-image.jpg",
+      value: "./assets/img/1.jpg",
+      userInfo: {
+        id: 34,
+        firstName: "Alex",
+        lastName: "Dumbrava",
+        profileImage: "./assets/img/female.jpeg"
+      }
+    },
+    {
+      id: 3,
+      value: "./assets/img/2.jpg",
       userInfo: {
         id: 34,
         firstName: "Alex",

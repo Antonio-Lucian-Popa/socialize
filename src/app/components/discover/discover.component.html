@@ -12,7 +12,8 @@
 
   <div class="container-image-list d-flex flex-wrap mt-5">
     <div class="container-image" *ngFor="let image of popularImages" (click)="openImage(image.id)">
-      <img src="./assets/img/post-image.jpg" alt="popular image">
+      <!-- <img [src]="image.value" alt="popular image"> -->
+      <div class="image-cover-container h-full max-w-full" [style.background-image]="'url(' + image.value + ')'"></div>
     </div>
   </div>
 </div>

@@ -19,6 +19,7 @@ import { ViewPostDialogComponent } from './components/view-post-dialog/view-post
 import { PostDetailComponent } from '../components/discover/post-detail/post-detail.component';
 import { LoaderComponent } from './components/loader/loader.component';
 import { CommentsComponent } from './components/comments/comments.component';
+import { UserAddCommentInputComponent } from './components/user-add-comment-input/user-add-comment-input.component';
 // register Swiper custom elements
 register();
 
@@ -41,12 +42,13 @@ const COMPONENTS: any[] = [
   PostComponent,
   PostDetailComponent,
   UserListComponent,
-  LoaderComponent
+  LoaderComponent,
+  UserAddCommentInputComponent
 ];
 
 
 @NgModule({
-  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent, UserListComponent, RelativeTimePipe, ViewPostDialogComponent, LoaderComponent, CommentsComponent],
+  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent, UserListComponent, RelativeTimePipe, ViewPostDialogComponent, LoaderComponent, CommentsComponent, UserAddCommentInputComponent],
   imports: [
     CommonModule,
     ...NB_MODULES
