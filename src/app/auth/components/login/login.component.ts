@@ -3,6 +3,7 @@ import { UntypedFormBuilder, Validators } from '@angular/forms';
 import { AuthService } from '../../services/auth.service';
 import { Router } from '@angular/router';
 import { AuthInterceptor } from '../../auth.interceptor';
+import { AlertService } from 'src/app/shared/services/alert.service';
 
 @Component({
   selector: 'app-login',
@@ -19,9 +20,12 @@ export class LoginComponent implements OnInit {
   constructor(
     private fb: UntypedFormBuilder,
     private authService: AuthService,
-    private router: Router) { }
+    private router: Router,
+    private alertService: AlertService
+    ) { }
 
   ngOnInit(): void {
+    this.alertService.showAlert('error', 'An error occurred!');
   }
 
   submit(): void {

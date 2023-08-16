@@ -1,7 +1,7 @@
 <div class="container-app d-flex justify-content-between h-100">
-  <app-side-nav class="side-nav"></app-side-nav>
-  <div class="container-routing h-100">
-    <div class="top-nav-mobile">
+  <app-side-nav class="side-nav" *ngIf="isSideNav"></app-side-nav>
+  <div class="h-100" [ngClass]="isSideNav ? 'container-routing' : 'container-no-auth'">
+    <div class="top-nav-mobile" *ngIf="isSideNav">
       <div class="d-flex align-items-center justify-content-between mt-2 mb-2">
         <div class="logo">
           <img class="logo-web" src="./assets/img/logo.svg" alt="logo social network">
@@ -14,8 +14,7 @@
         </div>
       </div>
     </div>
-    <app-alert></app-alert>
     <router-outlet></router-outlet>
-    <app-mobile-navigation class="mobile-nav"></app-mobile-navigation>
+    <app-mobile-navigation class="mobile-nav" *ngIf="isSideNav"></app-mobile-navigation>
   </div>
 </div>

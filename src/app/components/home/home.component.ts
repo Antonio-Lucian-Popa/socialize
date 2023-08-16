@@ -3,7 +3,6 @@ import { FormBuilder } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthInterceptor } from 'src/app/auth/auth.interceptor';
 import { AuthService } from 'src/app/auth/services/auth.service';
-import { AlertService } from 'src/app/shared/services/alert/alert.service';
 
 
 @Component({
@@ -20,7 +19,7 @@ export class HomeComponent implements OnInit {
   constructor(
     private authService: AuthService,
     private router: Router,
-    private alertService: AlertService,
+   // private alertService: AlertService,
     private fb: FormBuilder
     ) { }
 
@@ -32,7 +31,7 @@ export class HomeComponent implements OnInit {
       toDismiss: 'testing',
       closeButton: true
     }
-    this.alertService.openPopUpAlert(`testing`, 'Conflict', alertSetting);
+    //this.alertService.openPopUpAlert(`testing`, 'Conflict', alertSetting);
 
     this.searchUser.get("value")?.valueChanges.subscribe(val => {
       console.log(val);

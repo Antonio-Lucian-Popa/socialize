@@ -1,8 +1,7 @@
-<div class="container-post-detail pb-5 flex flex-col h-full">
-
+<div class="container-post-detail flex flex-col w-full">
 
   <!-----------------Header---------------------->
-  <div class="header mt-4 pb-3 flex items-center justify-between">
+  <div class="header mt-4 pb-3 flex items-center justify-between" *ngIf="showHeader">
     <mat-icon class="material-symbols-outlined" (click)="closeComments()">
       arrow_back_ios
     </mat-icon>
@@ -41,30 +40,34 @@
       <!--------------End Option btn for post---------->
 
     </div>
-    <div class="container-images" *ngIf="!isCommentOpened">
+
+    <div class="w-4/4 sm:w-4/4 md:w-2/4 lg:w-2/4" *ngIf="!isCommentOpened">
       <swiper-container slides-per-view="1" loop="false" css-mode="false" centeredSlides="true" pagination="true"
-      pagination-dynamic-bullets="true" navigation="true" autoHeight="true" allowTouchMove="true" class="h-full">
+        pagination-dynamic-bullets="true" navigation="true" autoHeight="true" allowTouchMove="true" class="h-full">
         <swiper-slide>
-          <img class="h-auto max-w-full" src="./assets/img/post-image.jpg" alt="user post image">
+          <!-- <img class="h-full max-w-full" src="./assets/img/post-image.jpg" alt="user post image"> -->
+          <div class="image-cover-container h-full max-w-full"
+            style="background-image: url(./assets/img/post-image.jpg);"></div>
         </swiper-slide>
-        <swiper-slide>Slide 2</swiper-slide>
-        <swiper-slide>Slide 3</swiper-slide>
+
+        <swiper-slide>
+          <!-- <img class="h-full max-w-full" src="./assets/img/post-image.jpg" alt="user post image"> -->
+          <div class="image-cover-container h-full max-w-full" style="background-image: url(./assets/img/1.jpg);"></div>
+        </swiper-slide>
+
+        <swiper-slide>
+          <!-- <img class="h-full max-w-full" src="./assets/img/post-image.jpg" alt="user post image"> -->
+          <div class="image-cover-container h-full max-w-full" style="background-image: url(./assets/img/2.jpg);"></div>
+        </swiper-slide>
       </swiper-container>
     </div>
     <div class="bottom">
 
       <!-------User input comment----------->
       <div class="container-user-input d-flex align-items-center justify-content-between mt-3" *ngIf="isCommentOpened">
-        <div class="profile-image">
-          <img src="./assets/img/female.jpeg" alt="user profile image">
-        </div>
-        <form class="user-input-form">
-          <div class="user-input-container d-flex align-items-center justify-content-between">
-            <textarea #expandableTextarea aria-label="Add a comment…" placeholder="Add a comment…" autocomplete="off" autocorrect="off"
-              class="user-input"></textarea>
-            <button type="button" class="btn-post-comment">Post</button>
-          </div>
-        </form>
+
+        <!---------------User input------------------------>
+        <app-user-add-comment-input class="w-full" [backgroundColor]="'transparent'"></app-user-add-comment-input>
       </div>
       <!-------End User input comment----------->
       <div class="user-actions d-flex align-items-center pt-2" *ngIf="!isCommentOpened">

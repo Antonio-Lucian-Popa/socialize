@@ -1,14 +1,14 @@
 <div class="header d-flex flex-row align-items-center mt-3 mb-3">
   <div class="col">
-    <button mat-dialog-close class="close-button float-right">
+    <button mat-dialog-close class="close-button float-right mr-3">
       <mat-icon>close</mat-icon>
     </button>
   </div>
 </div>
 
-<mat-dialog-content *ngIf="true">
-  <div class="container-view-dialog overflow-y-auto d-flex flex-col sm:flex-col md:flex-row lg:flex-row h-full">
-    <div class="w-2/4 sm:w-2/4 lg:w-2/4 mr-5">
+<mat-dialog-content class="sm:pt-3.5 md:pt-3.5 lg:pt-3.5">
+  <div class="container-view-dialog overflow-y-auto hidden sm:hidden md:flex lg:flex flex-col sm:flex-col md:flex-row lg:flex-row h-full">
+    <div class="w-4/4 sm:w-4/4 md:w-2/4 lg:w-2/4 mr-5">
       <swiper-container slides-per-view="1" loop="false" css-mode="false" centeredSlides="true" pagination="true"
         pagination-dynamic-bullets="true" navigation="true" autoHeight="true" allowTouchMove="true" class="h-full">
         <swiper-slide>
@@ -32,7 +32,7 @@
     </div>
 
     <!------doar aici sa fie scroll-->
-    <div class="container-information overflow-y-auto w-2/4 sm:w-2/4 lg:w-2/4">
+    <div class="container-information overflow-y-auto w-4/4 sm:w-4/4 md:w-2/4 lg:w-2/4">
       <div class="user-profile-info d-flex flex-column align-items-start justify-content-start mb-5">
         <div class="d-flex justify-content-start">
           <img class="w-10 h-10 p-1 rounded-full" src="./assets/img/female.jpeg" alt="user profile image">
@@ -54,12 +54,9 @@
         <app-comments></app-comments>
       </div>
       <!-----------------End Post comments-------------------------->
-      <app-user-add-comment-input></app-user-add-comment-input>
+      <app-user-add-comment-input class="absolute bottom-0"></app-user-add-comment-input>
     </div>
   </div>
+  <app-post-detail class="container-view-dialog overflow-auto flex sm:flex md:hidden lg:hidden" [showHeader]="false"></app-post-detail>
 </mat-dialog-content>
 
-
-<mat-dialog-content *ngIf="false">
-  <app-post-detail></app-post-detail>
-</mat-dialog-content>

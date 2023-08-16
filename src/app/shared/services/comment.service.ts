@@ -28,6 +28,16 @@ export class CommentService {
     return this.http.get<Comment[]>(`${this.URL}/api/v1/subcomments`, { params });
   }
 
+  /**
+   *
+   * @param userId will be the user that create the comment
+   * @param commentValue will be the comment to post
+   * @returns
+   */
+  createComment(userId: string, commentValue: string): Observable<any> {
+    return this.http.post<any[]>(`${this.URL}/api/v1/comments/${userId}`, commentValue);
+  }
+
   processComment(comment: string): CommentSegment[] {
     const mentionRegex = /@([a-zA-Z0-9_]+)/g;
     let lastIndex = 0;

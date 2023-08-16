@@ -3,7 +3,6 @@ import { CommonModule, DatePipe } from '@angular/common';
 import {MatDividerModule} from '@angular/material/divider';
 import {MatCardModule} from '@angular/material/card';
 import {MatSelectModule} from '@angular/material/select';
-import { AlertModule } from './services/alert/alert.module';
 import {MatIconModule} from '@angular/material/icon';
 import {MatBadgeModule} from '@angular/material/badge';
 import { CreatePostComponent } from './components/create-post/create-post.component';
@@ -21,6 +20,7 @@ import { LoaderComponent } from './components/loader/loader.component';
 import { CommentsComponent } from './components/comments/comments.component';
 import { UserAddCommentInputComponent } from './components/user-add-comment-input/user-add-comment-input.component';
 import { CommentViewComponent } from './components/comments/comment-view/comment-view.component';
+import { AlertComponent } from './components/alert/alert.component';
 // register Swiper custom elements
 register();
 
@@ -29,7 +29,6 @@ const NB_MODULES: any[] = [
   MatDividerModule,
   MatCardModule,
   MatSelectModule,
-  AlertModule,
   MatIconModule,
   MatBadgeModule,
   FormsModule,
@@ -45,12 +44,13 @@ const COMPONENTS: any[] = [
   UserListComponent,
   LoaderComponent,
   UserAddCommentInputComponent,
-  CommentViewComponent
+  CommentViewComponent,
+  AlertComponent
 ];
 
 
 @NgModule({
-  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent, UserListComponent, RelativeTimePipe, ViewPostDialogComponent, LoaderComponent, CommentsComponent, UserAddCommentInputComponent, CommentViewComponent],
+  declarations: [...COMPONENTS, CreatePostDialogComponent, PostComponent, UserListComponent, RelativeTimePipe, ViewPostDialogComponent, LoaderComponent, CommentsComponent, UserAddCommentInputComponent, CommentViewComponent, AlertComponent],
   imports: [
     CommonModule,
     ...NB_MODULES

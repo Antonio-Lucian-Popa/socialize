@@ -1,4 +1,4 @@
-import { AfterViewInit, Component, ElementRef, OnInit, Renderer2, ViewChild } from '@angular/core';
+import { AfterViewInit, Component, ElementRef, Input, OnInit, Renderer2, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Comment } from 'src/app/shared/interfaces/comment';
 import { Post, User } from 'src/app/shared/interfaces/post';
@@ -13,6 +13,8 @@ export class PostDetailComponent implements OnInit {
 
   @ViewChild('expandableTextarea')
   textarea!: ElementRef;
+
+  @Input() showHeader = true;
 
   postId: string | null = "";
   numberOfComments = 17;
@@ -33,6 +35,7 @@ export class PostDetailComponent implements OnInit {
   }
 
   loadComments(): void {
+    console.log("intra")
     // TODO: we made an http call to get the comments using pageable
     this.isCommentOpened = true;
     if (this.postId) {

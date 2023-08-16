@@ -54,7 +54,6 @@ export class DiscoverComponent implements OnInit {
   @HostListener('window:resize', ['$event'])
   onResize(event?: Event) {
     this.windowWidth = window.innerWidth; // Update the window width on resize
-    console.log('Window width:', this.windowWidth); // You can perform any action here when the window is resized
   }
 
   constructor(

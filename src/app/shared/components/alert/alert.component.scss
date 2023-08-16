@@ -1,0 +1,51 @@
+#alert-border-3 {
+  position: absolute;
+  right: 0;
+}
+
+/* Assuming you have variables or a mapping for alert colors. If not, you can use plain CSS colors. */
+
+.bg-alert {
+  &.success {
+    background-color: #D1E7DD;  /* green background color */
+  }
+  &.error {
+    background-color: #FECACA;  /* red background color */
+  }
+  &.info {
+    background-color: #CFE2FF;  /* blue background color */
+  }
+  &.warning {
+    background-color: #FFF3CD;  /* yellow background color */
+  }
+}
+
+.text-alert {
+  &.success {
+    color: #0F5132;  /* green text color */
+  }
+  &.error {
+    color: #842029;  /* red text color */
+  }
+  &.info {
+    color: #054396;  /* blue text color */
+  }
+  &.warning {
+    color: #664D03;  /* yellow text color */
+  }
+}
+
+.border-t-4 {
+  &.success {
+    border-top-color: #3D8B37;  /* green border color */
+  }
+  &.error {
+    border-top-color: #B91C1C;  /* red border color */
+  }
+  &.info {
+    border-top-color: #316CBE;  /* blue border color */
+  }
+  &.warning {
+    border-top-color: #B45309;  /* yellow border color */
+  }
+}

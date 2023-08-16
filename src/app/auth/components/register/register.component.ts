@@ -16,7 +16,7 @@ export class RegisterComponent implements OnInit {
     email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required],
     birthday: ['', Validators.required],
-    gender: ['']
+    gender: ['Gender']
   });
 
   constructor
@@ -29,13 +29,15 @@ export class RegisterComponent implements OnInit {
   }
 
   submit(): void {
+    console.log(this.form.valid);
     if(this.form.valid) {
       console.log(this.form.value);
-      // this.authService.register(this.form.getRawValue()).subscribe(res => {
-      //   this.router.navigate(['/login']);
-      // }, err => {
-      //   // show alert error
-      // });
+      this.authService.register(this.form.getRawValue()).subscribe(res => {
+      this.router.navigate(['/login']);
+       console.log(res)
+      }, err => {
+        // show alert error
+      });
     }
   }
 
