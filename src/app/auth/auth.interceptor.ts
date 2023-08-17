@@ -7,12 +7,11 @@ import {
   HttpInterceptor,
   HttpErrorResponse
 } from '@angular/common/http';
-import { Observable, catchError, switchMap, throwError } from 'rxjs';
+import { Observable, catchError, switchMap, tap, throwError } from 'rxjs';
 
 @Injectable()
 export class AuthInterceptor implements HttpInterceptor {
 
-  static accessToken = '';
   refresh = false;
 
   constructor(private authService: AuthService) {}
@@ -20,7 +19,7 @@ export class AuthInterceptor implements HttpInterceptor {
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     const req = request.clone({
       setHeaders: {
-        Authorization: `Bearer ${AuthInterceptor.accessToken}`
+        Authorization: `Bearer ${this.authService.getAccessToken()}`
       }
     });
 
@@ -28,12 +27,12 @@ export class AuthInterceptor implements HttpInterceptor {
       if(err.status === 401 && !this.refresh) {
         this.refresh = true;
         return this.authService.refreshToken().pipe(
-          switchMap((res: any) => {
-            AuthInterceptor.accessToken = res.access_token;
+          tap((res: any) => {
+            this.authService.setAccessToken(res.refresh_token);
 
             return next.handle(request.clone({
               setHeaders: {
-                Authorization: `Bearer ${AuthInterceptor.accessToken}`
+                Authorization: `Bearer ${this.authService.getAccessToken()}`
               }
             }));
           })

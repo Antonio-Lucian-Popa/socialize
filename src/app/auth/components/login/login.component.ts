@@ -13,7 +13,7 @@ import { AlertService } from 'src/app/shared/services/alert.service';
 export class LoginComponent implements OnInit {
 
   form = this.fb.group({
-    email: ['', Validators.required],
+    email: ['', [Validators.required, Validators.email]],
     password: ['', Validators.required]
   });
 
@@ -31,7 +31,7 @@ export class LoginComponent implements OnInit {
   submit(): void {
     if(this.form.valid) {
       this.authService.login(this.form.getRawValue()).subscribe(res => {
-        AuthInterceptor.accessToken = res.access_token;
+        this.authService.setAccessToken(res.access_token);
         this.router.navigate(['/']);
       }, err => {
         // show alert error

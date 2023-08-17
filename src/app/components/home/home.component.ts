@@ -41,7 +41,7 @@ export class HomeComponent implements OnInit {
 
   logout(): void {
     this.authService.logout().subscribe(res => {
-      AuthInterceptor.accessToken = '';
+      this.authService.clearAccessToken();
       this.router.navigate(['/login']);
     });
   }
