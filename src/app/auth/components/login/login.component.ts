@@ -25,7 +25,10 @@ export class LoginComponent implements OnInit {
     ) { }
 
   ngOnInit(): void {
-    this.alertService.showAlert('error', 'An error occurred!');
+    if(this.alertService.showAlertOnLoginSuccess) {
+      this.alertService.showAlert('success', 'An error occurred!');
+      this.alertService.showAlertOnLoginSuccess = false;
+    }
   }
 
   submit(): void {

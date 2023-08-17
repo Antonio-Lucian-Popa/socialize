@@ -10,15 +10,33 @@ import { trigger, state, style, transition, animate } from '@angular/animations'
       state('void', style({
         opacity: 0
       })),
-      transition('void <=> *', animate(500))
+      transition(':leave', animate('500ms ease-out')) // Fade out animation on leave
     ])
   ]
 })
-export class AlertComponent {
+export class AlertComponent implements OnInit {
 
   @Input() type: 'success' | 'error' | 'info' | 'warning' = 'info';
   @Input() message: string = '';
-  closeAlert!: () => void;  // This will be assigned by the service
+ // closeAlert!: () => void;  // This will be assigned by the service
+
+  dismissed = false;
+
+  onAnimationDone(): void {
+    if (this.dismissed) {
+      this.closeAlert();
+    }
+  }
+
+  closeAlert(): void {
+    this.dismissed = true;
+  }
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.closeAlert();
+    }, 3000); // 5000 milliseconds = 5 seconds
+  }
 
   getAlertClasses(): any {
     return {

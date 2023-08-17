@@ -1,4 +1,4 @@
-<div class="flex items-center p-4 mb-4 border-t-4 bg-alert dark:bg-gray-800" role="alert" [ngClass]="getAlertClasses()">
+<div *ngIf="!dismissed" class="flex items-center p-4 mb-4 border-t-4 bg-alert dark:bg-gray-800" role="alert" [ngClass]="getAlertClasses()" [@fadeInOut] (@fadeInOut.done)="onAnimationDone()">
   <svg class="flex-shrink-0 w-4 h-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 20 20">
     <!-- SVG content, you can modify this according to the alert type or keep it static -->
   </svg>

@@ -14,10 +14,10 @@
     <mat-card>
       <mat-card-content>
         <form class="form-container" [formGroup]="form" (ngSubmit)="submit()">
-          <div class="d-flex flex-column  mb-3">
+          <div class="d-flex flex-column">
             <div class="flex flex-col justify-between align-middle sm:flex-row md:flex-row lg:flex-row">
 
-              <div class="mb-3 sm:mb-0 md:mb-0 lg:mb-0">
+              <div class="mb-3">
                 <div class="relative">
                   <input formControlName="firstName" type="text" id="outlined_firstName_error"
                     aria-describedby="outlined_error_firstName_help"
@@ -33,7 +33,7 @@
                   class="mt-2 text-xs text-red-600 dark:text-red-400">Please compile the required input.</p>
               </div>
 
-              <div>
+              <div class="mb-3">
                 <div class="relative">
                   <input formControlName="lastName" type="text" id="outlined_error_lastName"
                     aria-describedby="outlined_error_lastName_help"
